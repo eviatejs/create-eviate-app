@@ -1,0 +1,49 @@
+{
+  "name": "create-eviate-app",
+  "version": "0.1.0",
+  "description": "Get started w/ a eviate app quickly.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "create-eviate-app": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "yarn build && yarn ./dist/index.js",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ./**/*.{ts,json,md}",
+    "prepublishOnly": "yarn run build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2",
+    "readline": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.2",
+    "@types/prompts": "^2.0.14",
+    "bun-types": "^0.1.11",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.3"
+  },
+  "keywords": [],
+  "author": "EviateJS team",
+  "license": "MIT",
+  "homepage": "https://github.com/eviatejs/create-eviate-app",
+  "bugs": {
+    "url": "https://github.com/eviatejs/create-eviate-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eviatejs/create-eviate-app.git"
+  }
+}
