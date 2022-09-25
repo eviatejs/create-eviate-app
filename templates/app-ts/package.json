@@ -1,0 +1,11 @@
+{
+  "name": "app-ts",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.1.0"
+  },
+  "dependencies": {
+    "eviate": "^0.1.0-alpha.11"
+  }
+}
