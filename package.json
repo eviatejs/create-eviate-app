@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "yarn build && yarn ./dist/index.js",
+    "dev": "yarn build && node ./dist/index.js",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write ./**/*.{ts,json,md}",
@@ -20,6 +20,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "cross-spawn": "^7.0.3",
     "kolorist": "^1.6.0",
     "minimist": "^1.2.6",
     "prompts": "^2.4.2",

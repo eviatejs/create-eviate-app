@@ -1,8 +1,12 @@
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url'
+
 import minimist from 'minimist';
 import prompts from 'prompts';
-import { yellow, blue, cyan, red, reset } from 'kolorist';
+import { yellow, blue, cyan, red, reset, green } from 'kolorist';
 
-import { formatTargetDir } from './utils';
+import { formatTargetDir, copyDir } from './utils';
 
 const argv = minimist<{
   t?: string;
@@ -80,6 +84,7 @@ export async function scaffoldProject() {
   try {
     result = await prompts(
       [
+        // Project name
         {
           type: argTargetDir ? null : 'text',
           name: 'projectName',
@@ -89,6 +94,8 @@ export async function scaffoldProject() {
             targetDir = formatTargetDir(state.value) || defaultProjectName;
           }
         },
+
+        // Template selection
         {
           name: 'template',
           initial: 0,
@@ -110,6 +117,8 @@ export async function scaffoldProject() {
               )
               : reset('Select the template type:')
         },
+
+        // Template variant selection
         {
           name: 'variant',
           type: (template: Template) =>
@@ -117,6 +126,7 @@ export async function scaffoldProject() {
           choices: (template: Template) =>
             template.variants.map(variant => {
               const variantColor = variant.color;
+              console.log(variant);
 
               return {
                 title: variantColor(variant.display || variant.name),
@@ -137,11 +147,27 @@ export async function scaffoldProject() {
     return;
   }
 
+  // TODO: Use `projectName` for `package.json` write.
   const { projectName, template, variant } = result;
 
-  console.log(`
-  ${yellow('Project name:')} ${projectName}
-  ${yellow('Framework:')} ${template.display}
-  ${yellow('Variant:')} ${variant.display}
-  `);
+  // Get the path to scaffold project
+  const root = path.join(cwd, targetDir);
+
+  fs.mkdirSync(root, { recursive: true });
+
+  // Get the template to scaffold project
+  const templateName = variant || template || argTemplate;
+
+  console.log(`Scaffolding project in ${root}.`)
+
+  // Locate the template folder
+  const templateDir = path.resolve(
+    fileURLToPath(import.meta.url),
+    '../../templates',
+    templateName
+  )
+
+  copyDir(templateDir, root);
+
+  console.log(green(`\nDone.`))
 }
