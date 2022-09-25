@@ -1,0 +1,15 @@
+{
+  "name": "plugin",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/main.js"
+  },
+  "devDependencies": {
+    "bun-types": "^0.1.0"
+  },
+  "dependencies": {
+    "eviate": "^0.1.0-alpha.13",
+    "eviate-plugin": "^0.1.0-alpha.14"
+  }
+}
