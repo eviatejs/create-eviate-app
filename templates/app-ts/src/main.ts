@@ -5,7 +5,7 @@ import Logger from './middlewares/basicLogger';
 
 const app: Engine = new Engine();
 
-app.use('start', Logger);
+app.use('before', Logger);
 
 app.get('/', (_: Context) => {
   return {
