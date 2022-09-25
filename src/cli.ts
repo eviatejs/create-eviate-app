@@ -1,6 +1,6 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath } from 'node:url';
 
 import minimist from 'minimist';
 import prompts from 'prompts';
@@ -111,10 +111,10 @@ export async function scaffoldProject() {
           }),
           message:
             typeof argTemplate === 'string' &&
-              !allTemplates.includes(argTemplate)
+            !allTemplates.includes(argTemplate)
               ? reset(
-                `"${argTemplate}" isn't a valid template. Please choose from below: `
-              )
+                  `"${argTemplate}" isn't a valid template. Please choose from below: `
+                )
               : reset('Select the template type:')
         },
 
@@ -158,16 +158,16 @@ export async function scaffoldProject() {
   // Get the template to scaffold project
   const templateName = variant || template || argTemplate;
 
-  console.log(`Scaffolding project in ${root}.`)
+  console.log(`Scaffolding project in ${root}.`);
 
   // Locate the template folder
   const templateDir = path.resolve(
     fileURLToPath(import.meta.url),
     '../../templates',
     templateName
-  )
+  );
 
   copyDir(templateDir, root);
 
-  console.log(green(`\nDone.`))
+  console.log(green(`\nDone.`));
 }
