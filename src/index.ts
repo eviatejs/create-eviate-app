@@ -1,5 +1,5 @@
-import { scaffoldProject } from './cli';
+import { init } from './cli';
 
-scaffoldProject().catch(e => {
+init().catch(e => {
   console.error(e);
 });

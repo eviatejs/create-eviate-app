@@ -72,8 +72,7 @@ const allTemplates = templates
 
 const defaultProjectName = 'eviate-project';
 
-// Function to scaffold project
-export async function scaffoldProject() {
+export async function init() {
   const argTargetDir = formatTargetDir(argv._[0]);
   const argTemplate = argv.template || argv.t;
 
