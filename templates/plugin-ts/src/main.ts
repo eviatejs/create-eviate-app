@@ -1,11 +1,8 @@
 import { Context, Engine } from 'eviate';
-
-import router from './routes';
-import Logger from './middlewares/basicLogger';
-
+import fileRouter from './fileRouter';
 const app: Engine = new Engine();
 
-app.use('before', Logger);
+fileRouter.handler(app)
 
 app.get('/', (_: Context) => {
   return {
@@ -15,6 +12,5 @@ app.get('/', (_: Context) => {
   };
 });
 
-app.mount(router);
 
 app.listen();

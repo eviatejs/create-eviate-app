@@ -3,11 +3,11 @@ import { Context, Engine } from 'eviate';
 import router from './routes';
 import Logger from './middlewares/basicLogger';
 
-const app: Engine = new Engine();
+const app = new Engine();
 
 app.use('before', Logger);
 
-app.get('/', (_: Context) => {
+app.get('/', (ctx) => {
   return {
     text: 'EviateJS - The next-gen backend web framework',
     status: 200,
