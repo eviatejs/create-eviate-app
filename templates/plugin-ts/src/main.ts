@@ -2,7 +2,7 @@ import { Context, Engine } from 'eviate';
 import fileRouter from './fileRouter';
 const app: Engine = new Engine();
 
-fileRouter.handler(app)
+fileRouter.handler(app);
 
 app.get('/', (_: Context) => {
   return {
@@ -11,6 +11,5 @@ app.get('/', (_: Context) => {
     headers: {}
   };
 });
-
 
 app.listen();

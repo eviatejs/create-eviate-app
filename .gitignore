@@ -31,3 +31,6 @@ yarn-error.log*
 # Coverage
 coverage/
 coverage.json
+
+# Delete all bun lock files in templates
+./templates/**/bun.lockb
