@@ -6,7 +6,7 @@ import minimist from 'minimist';
 import prompts from 'prompts';
 import { yellow, blue, cyan, red, reset, green } from 'kolorist';
 
-import { formatTargetDir, copyDir } from './utils';
+import { formatTargetDir, copy } from './utils';
 
 const argv = minimist<{
   t?: string;
@@ -125,7 +125,6 @@ export async function init() {
           choices: (template: Template) =>
             template.variants.map(variant => {
               const variantColor = variant.color;
-              console.log(variant);
 
               return {
                 title: variantColor(variant.display || variant.name),
@@ -166,7 +165,7 @@ export async function init() {
     templateName
   );
 
-  copyDir(templateDir, root);
+  copy(templateDir, root);
 
   console.log(green(`\nDone.`));
 }

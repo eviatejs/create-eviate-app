@@ -23,18 +23,19 @@ export function emptyDir(dir: string) {
   }
 }
 
-// Copy a whole directory from directory to directory
-export function copyDir(from: string, to: string) {
-  for (const file of fs.readdirSync(from)) {
-    const fromPath = path.resolve(from, file);
-    const toPath = path.resolve(to, file);
+// Copy all files and directories from `src` to `dest`
+export function copy(src: string, dest: string) {
+  fs.mkdirSync(dest, { recursive: true });
 
-    const stat = fs.statSync(fromPath);
+  for (const file of fs.readdirSync(src)) {
+    const srcPath = path.resolve(src, file);
+    const destPath = path.resolve(dest, file);
+    const stat = fs.statSync(srcPath);
 
     if (stat.isDirectory()) {
-      copyDir(fromPath, toPath);
+      copy(srcPath, destPath);
     } else {
-      fs.copyFileSync(fromPath, toPath);
+      fs.copyFileSync(srcPath, destPath);
     }
   }
 }

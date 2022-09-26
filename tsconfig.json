@@ -42,9 +42,6 @@
     "noEmit": false,
 
     // enable default imports
-    "allowSyntheticDefaultImports": true,
-
-    // "bun-types" is the important part
-    "types": ["bun-types"]
+    "allowSyntheticDefaultImports": true
   }
 }

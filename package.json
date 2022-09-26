@@ -30,7 +30,6 @@
   "devDependencies": {
     "@types/minimist": "^1.2.2",
     "@types/prompts": "^2.0.14",
-    "bun-types": "^0.1.11",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",

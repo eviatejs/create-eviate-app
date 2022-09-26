@@ -1,5 +1,7 @@
-import { init } from './cli';
+#!/usr/bin/env node
+import { init } from "./cli";
 
-init().catch(e => {
-  console.error(e);
+init().catch((error) => {
+  console.error(error);
+  process.exit(1);
 });
