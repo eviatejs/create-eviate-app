@@ -1,6 +1,6 @@
 {
   "name": "create-eviate-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Get started w/ a eviate app quickly.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -9,13 +9,14 @@
     "create-eviate-app": "dist/index.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "templates"
   ],
   "scripts": {
     "dev": "yarn build && node ./dist/index.js",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ./**/*.{ts,json,md}",
+    "format": "prettier --write ./**/*.{js,ts,json,md}",
     "prepublishOnly": "yarn run build",
     "prepare": "husky install"
   },
