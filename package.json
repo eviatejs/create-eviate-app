@@ -1,6 +1,6 @@
 {
   "name": "create-eviate-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Get started w/ a eviate app quickly.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "cross-spawn": "^7.0.3",
+    "eviate": "^0.1.5",
     "kolorist": "^1.6.0",
     "minimist": "^1.2.6",
     "prompts": "^2.4.2",
