@@ -1,4 +1,4 @@
-import { FileSystemRouter } from 'eviate-plugin';
+import { FileSystemRouter } from '@eviatejs/plugin-filesystem-router';
 
 export default new FileSystemRouter({
   routerDir: '/src/routes',

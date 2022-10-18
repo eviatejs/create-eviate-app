@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@eviatejs/plugin-filesystem-router@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@eviatejs/plugin-filesystem-router/-/plugin-filesystem-router-0.1.1.tgz#eea5c05cf8f6682e5316ed2ad5b937448a6260a6"
+  integrity sha512-dRkR1PgW7FdJy0r46C65vmjBlsRUO5nAAjbnhwr4KvUmtJ5EBDS1OfmXQaRYvIzUtpXUA/bHCc+oDD0VPtUN1A==
+  dependencies:
+    "@eviatejs/plugin" "^0.1.2"
+
+"@eviatejs/plugin@^0.1.2", "@eviatejs/plugin@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@eviatejs/plugin/-/plugin-0.1.3.tgz#9c6434ab6c6b899116d3a1f1e842249b7c3dc0d8"
+  integrity sha512-Q6kVxPbsoVC6B26Oz6LXAq6ump8ZeH9BVjC6FBySp03vQzlMhP+6X2MNN8Kr7POKuku4LQOBddmpjQPv/YsS/g==
+  dependencies:
+    sweet-event-emitter "^0.1.0"
+
 bun-types@^0.1.0:
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/bun-types/-/bun-types-0.1.11.tgz#cc34bf6c9fe3ade6569a18fdc2e442e80ad912e7"
@@ -21,7 +35,7 @@ eviate-plugin@^0.1.0-alpha.13:
   dependencies:
     eviate "^0.1.0-alpha.11"
 
-eviate@^0.1.0-alpha.11, eviate@^0.1.0-alpha.12:
+eviate@^0.1.0-alpha.11:
   version "0.1.0-alpha.12"
   resolved "https://registry.yarnpkg.com/eviate/-/eviate-0.1.0-alpha.12.tgz#a938f01a3a27ed55be2fa924f57b56e2aa03fde0"
   integrity sha512-07J6emYFcDsls4iMsC3Pq8SnX8LVh8nF2p5Smq7FMAlHIvU/XNsfATes7VTQMFkxIprxOr926+gDmG3J7isSXQ==
@@ -30,10 +44,24 @@ eviate@^0.1.0-alpha.11, eviate@^0.1.0-alpha.12:
     picocolors "^1.0.0"
     ws "^8.9.0"
 
+eviate@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/eviate/-/eviate-0.1.5.tgz#16ba078350e2c1e86aa92058144fd7a208f75b68"
+  integrity sha512-ZwOX0ZTj15W0uh+mjUOBYKwkgp9FOrrsEicpD00FYqS08n6Xio9kp7HEPTK1X3k281UCgZ5x+5fJ6t/ljPwADA==
+  dependencies:
+    "@eviatejs/plugin" "^0.1.3"
+    picocolors "^1.0.0"
+    sweet-event-emitter "^0.1.0"
+
 picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
+
+sweet-event-emitter@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/sweet-event-emitter/-/sweet-event-emitter-0.1.0.tgz#a9f1a192907961a1077c8f9eb045b43d7b28f981"
+  integrity sha512-NroPqoihsibcIGPnOlVFdda14F+CFxA1SoC67RvGBhpx915srdyJpsTT8dQP7rqqkjm7SlRs5uvWIiLZx397cA==
 
 typescript@^4.8.3:
   version "4.8.3"

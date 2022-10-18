@@ -1,8 +1,10 @@
+import { plugin } from 'bun';
 import { Context, Engine } from 'eviate';
 import fileRouter from './fileRouter';
 const app: Engine = new Engine();
 
-fileRouter.handler(app);
+app.plugin.load(fileRouter)
+app.plugin.run()
 
 app.get('/', (_: Context) => {
   return {
